@@ -37,21 +37,29 @@ public:
 		delete[] m_arr;
 	}
 
-	void fillRandom(int& arr, int length)
+	void fillRandom()
 	{
 		srand(time(NULL));
-		int var_rasstan = rand() % 3 + 1;
-		for (int count = 0; count < length; ++count)
+		for (int count = 0; count < m_length; ++count)
 			m_arr[count] = rand() % 10 + 1;
 	}
 
+	void print()
+	{
+		for (int count = 0; count < m_length; ++count)
+			cout << m_arr[count] << " ";
+		cout << endl;
+	}
 
 };
 
 int main()
 {
 
-
+	Array_int arr1(10);
+	arr1.print();
+	arr1.fillRandom();
+	arr1.print();
 
 
 	return 0;
